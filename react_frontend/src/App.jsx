@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/users/")
+      .get("/api/users/")
       .then((response) => {
         console.log(response.data);
         setUserName(response.data[0].username);
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Hello is updated</h1>
       <h1>{userName}</h1>
     </>
   );
