@@ -22,19 +22,19 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build and tag backend image
-      run: docker build -t varsubham/backend ./Django_backend
+      run: docker build -t martinjoshy/backend:latest ./Django_backend
 
     - name: Build and tag frontend image
-      run: docker build -t varsubham/frontend ./react_frontend
+      run: docker build -t martinjoshy/frontend:latest ./react_frontend
 
     - name: Build and tag nginx image
-      run: docker build -t varsubham/nginx ./nginx
+      run: docker build -t martinjoshy/nginx:latest ./nginx
 
     - name: Push backend image to DockerHub
-      run: docker push varsubham/backend
+      run: docker push martinjoshy/backend:latest
 
     - name: Push frontend image to DockerHub
-      run: docker push varsubham/frontend
+      run: docker push martinjoshy/frontend:latest
 
     - name: Push nginx image to DockerHub
-      run: docker push varsubham/nginx
+      run: docker push martinjoshy/nginx:latest
