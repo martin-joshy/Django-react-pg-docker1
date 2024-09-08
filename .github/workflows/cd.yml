@@ -17,8 +17,14 @@ jobs:
         cd /home/ubuntu
         sudo docker compose pull
 
+    - name: Remove existing containers
+      run: |
+        sudo docker compose down || true
+
+    - name: Remove unused Docker images
+      run: |
+        sudo docker image prune -af
+
     - name: Set up Docker Compose
       run: |
-        cd /home/ubuntu
-        sudo docker compose down || true
         sudo docker compose up -d
